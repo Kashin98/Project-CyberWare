@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* NavBar Styling */
+#navIcon {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  padding: 10px;
+  z-index: 3;
+  transition: all 0.5s;
+  animation: blowup 3s infinite;
+}
+
+@keyframes blowup {
+  50% {
+    transform: scale(1.1, 1.1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+#navIcon:hover {
+  color: rgb(8, 248, 248);
+}
+.navBar {
+  position: fixed;
+  top: 0;
+  left: -100vw;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(75, 42, 105, 0.295);
+  transition: all 0.5s;
+}
+.navList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 40px;
+  padding: 20px;
+  list-style: none;
+}
+.navLink {
+  text-transform: capitalize;
+  padding: 10px 0;
+  font-size: 1.7rem;
+}
+.navOpen {
+  transform: translateX(100vw);
+  transition: all 0.5s;
+}
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 640px) {
+  .navBar {
+    left: -13rem;
+    width: 13rem;
+  }
+  .navOpen {
+    transform: translateX(13rem);
+    transition: all 0.5s;
+  }
+}
