@@ -3,7 +3,20 @@
   margin: 0;
   padding: 0;
 }
+<<<<<<< HEAD
 
+=======
+@font-face {
+  font-family: Cyberpunk;
+  src: url(../font/Cyberpunk.ttf);
+}
+
+:root {
+  --cyberBlueShadow: 2px 2px 4px aqua;
+  --cyberYellowShadow: 2px 2px 4px #d9ff00;
+  --cyberYellow: #d9ff00;
+}
+>>>>>>> 37207cd (first commit)
 /* NavBar Styling */
 #navIcon {
   position: fixed;
@@ -13,6 +26,11 @@
   padding: 10px;
   z-index: 3;
   transition: all 0.5s;
+<<<<<<< HEAD
+=======
+  color: var(--cyberYellow);
+  text-shadow: 1px 1px 3px aqua;
+>>>>>>> 37207cd (first commit)
   animation: blowup 3s infinite;
 }
 
@@ -56,6 +74,128 @@ a {
   text-decoration: none;
 }
 
+<<<<<<< HEAD
+=======
+/* Main Banner and social Links*/
+header {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 100vh;
+  position: relative;
+}
+.banner {
+  font-size: 3rem;
+  font-family: Cyberpunk;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--cyberYellow);
+  text-shadow: var(--cyberBlueShadow);
+  animation: cyberChange 4s infinite;
+}
+@keyframes cyberChange {
+  25% {
+    color: var(--cyberYellow);
+    text-shadow: var(--cyberBlueShadow);
+  }
+  50% {
+    color: aqua;
+    text-shadow: var(--cyberYellowShadow);
+  }
+  100% {
+    color: var(--cyberYellow);
+    text-shadow: var(--cyberBlueShadow);
+  }
+}
+.wares {
+  color: aqua;
+  text-shadow: var(--cyberYellowShadow);
+  animation: waresChange 4s infinite;
+}
+@keyframes waresChange {
+  25% {
+    color: var(--cyberYellow);
+    text-shadow: var(--cyberBlueShadow);
+  }
+  50% {
+    color: aqua;
+    text-shadow: var(--cyberYellowShadow);
+  }
+
+  100% {
+    color: aqua;
+    text-shadow: var(--cyberYellowShadow);
+  }
+}
+.socials {
+  margin-top: 30px;
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+}
+.socialLinks {
+  display: inline-block;
+  font-size: 1rem;
+  border: 2px solid;
+  padding: 8px;
+  margin: 10px;
+  color: var(--cyberYellow);
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10px;
+  transition: all 0.5s;
+}
+.socialLinks:hover {
+  color: aqua;
+}
+
+/* Video Settings */
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -1;
+}
+.videoItem {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* About Section */
+.about {
+}
+.mainHeading {
+  font-size: 2rem;
+  font-family: Cyberpunk;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--cyberYellow);
+  text-shadow: var(--cyberBlueShadow);
+}
+.imgContainer {
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+}
+img {
+  height: 100%;
+  width: 100%;
+}
+.description {
+  height: 100%;
+  display: grid;
+
+  text-align: left;
+  align-content: center;
+  padding: 30px;
+}
+
+>>>>>>> 37207cd (first commit)
 @media screen and (min-width: 640px) {
   .navBar {
     left: -13rem;
@@ -65,4 +205,46 @@ a {
     transform: translateX(13rem);
     transition: all 0.5s;
   }
+<<<<<<< HEAD
+=======
+  .banner {
+    font-size: 6rem;
+  }
+  .testing,
+  .howWeDo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  .howWeDo {
+    direction: rtl;
+  }
+}
+
+/* Experiemnt section */
+.mainHeading {
+}
+.experimentForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px;
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+}
+.submitBtn {
+}
+.experimentList {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.card {
+  border-radius: 10px;
+  border: 2px solid;
+  padding: 15px;
+  margin: 20px;
+>>>>>>> 37207cd (first commit)
 }
