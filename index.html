@@ -5,14 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cyber Junkie</title>
-<<<<<<< HEAD
-=======
+
     <link
       rel="icon"
       type="image/png"
       href="./images/Cyberpunk_2077_favicon.png"
     />
->>>>>>> 37207cd (first commit)
+
     <link rel="stylesheet" href="./css/styles.css" />
     <script
       src="https://kit.fontawesome.com/76be54988d.js"
@@ -31,9 +30,6 @@
         </ul>
       </article>
     </nav>
-<<<<<<< HEAD
-    <header></header>
-=======
 
     <!-- HEADER AND BANNER -->
     <header>
@@ -56,13 +52,15 @@
 
     <!-- About -->
     <section class="about">
-      <h1 class="mainHeading">we Build a better you</h1>
+      <h1 class="mainHeading">
+        we Build a better you<span class="typeEffect">|</span>
+      </h1>
       <article class="testing">
         <div class="imgContainer">
-          <img src="./images/Testing.png" alt="" />
+          <img src="./images/testing.jpg" alt="" />
         </div>
         <div class="description">
-          <h1 class="subHeading1">Testing</h1>
+          <h1 class="subHeading">Testing</h1>
           <p class="mainDescription">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Perspiciatis, eum facilis? Optio aut quia ipsa modi, ullam iste
@@ -78,7 +76,7 @@
           <img src="./images/implementation.jpg" alt="" />
         </div>
         <div class="description">
-          <h1 class="subHeading2">Implementation</h1>
+          <h1 class="subHeading">Implementation</h1>
           <p class="minDeascription">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
             quod mollitia expedita ea officiis beatae quia distinctio soluta hic
@@ -93,32 +91,186 @@
 
     <!-- Experiment -->
     <section class="experiment">
-      <h1 class="mainHeading">Be Our Experiment</h1>
+      <h1 class="mainHeading">
+        Be Our Experiment<span class="typeEffect">|</span>
+      </h1>
       <form class="experimentForm">
-        <div class="fields">
-          <input id="firstName" placeholder="First Name" type="text" />
-          <input id="lastName" placeholder="Last Name" type="text" />
-          <input id="email" placeholder="Email" type="email" />
-        </div>
-        <button type="submit" class="submitBtn" id="submitBtn">Do it</button>
+        <div class="feedback">feedback</div>
+        <input id="name" class="name fields" placeholder="Name" type=" text" />
+        <input
+          id="email"
+          class="email fields"
+          placeholder="Email"
+          type="email"
+        />
+        <button type="submit" class="submitBtn" id="submitBtn">
+          Join The List
+        </button>
       </form>
-      <h1 class="subheading1">We decide, you try</h1>
+      <h1 class="subHeading" style="text-align: left">
+        We decide, you try
+        <span style="color: aqua; text-transform: uppercase"> - IT'S FREE</span>
+      </h1>
       <article class="experimentList">
         <!-- Single card -->
         <div class="card">
-          <div class="topSection">
-            <img src="" alt="" />
-            <h4 class="name">name</h4>
+          <div class="details">
+            <img class="customerImg" src="./customerImgs/cust-0.png" alt="" />
+            <div class="data">
+              <h4 class="experimentTitle">
+                Name: <span class="shortHeading userName">Lorem Ipsum</span>
+              </h4>
+              <h4 class="experimentTitle">
+                Email:
+                <span class="shortHeading userEmail">kashin@arasaki.c</span>
+              </h4>
+              <h4 class="experimentTitle">
+                Experiment:
+                <span class="shortHeading">Immune System</span>
+              </h4>
+            </div>
           </div>
-          <h4 class="experimentTitle">
-            Experiment:
-            <span class="shortHeading">TYPE</span>
-          </h4>
         </div>
         <!-- End card -->
       </article>
     </section>
->>>>>>> 37207cd (first commit)
+
+    <!-- divider -->
+    <div style="padding-top: 60px; background-color: #000000"></div>
+
+    <!-- Implants -->
+    <section class="products">
+      <h1 class="mainHeading">Implants<span class="typeEffect">|</span></h1>
+      <article class="filterBtns">
+        <button class="Btn" data-filter="All">All</button>
+        <button class="Btn" data-filter="Frontal-Cortex">Frontal Cortex</button>
+        <button class="Btn" data-filter="Immune-System">Immune System</button>
+        <button class="Btn" data-filter="Nervous-System">Nervous System</button>
+        <button class="Btn" data-filter="Skeleton-Cyberware">
+          Skeleton Cyberware
+        </button>
+      </article>
+      <article class="search">
+        <input
+          id="searchBox"
+          class="fields"
+          placeholder="Search For Implants"
+          type=" text"
+          style="
+            color: #000000;
+            border: #000000 2px solid;
+            background-color: aqua;
+          "
+        /><i class="fas fa-search"></i>
+      </article>
+      <article class="productsList">
+        <!-- Product Showcase -->
+
+        <div class="card implants Immune-System" data-item="Immune-System">
+          <div class="productImgContainer">
+            <img src="./productImgs/product-1.png" alt="" />
+            <h1 class="cardHeading">METABOLIC EDITOR</h1>
+            <p class="cardDescription" style="color: azure">
+              An implant designed to assist liver and pancreas function against
+              poisons.
+            </p>
+          </div>
+        </div>
+        <div class="card implants Nervous-System" data-item="Nervous-System">
+          <div class="productImgContainer">
+            <img src="./productImgs/product-2.png" alt="" />
+            <h1 class="cardHeading">Neofiber</h1>
+          </div>
+          <p class="cardDescription">Synthetic muscle fibers.</p>
+        </div>
+        <div
+          class="card implants Skeleton-Cyberware"
+          data-item="Skeleton-Cyberware"
+        >
+          <div class="productImgContainer">
+            <img src="./productImgs/product-3.png" alt="" />
+            <h1 class="cardHeading">BIONIC JOINTS</h1>
+            <p class="cardDescription">Mechatronic musculoskeletal support.</p>
+          </div>
+        </div>
+        <div class="card implants Frontal-Cortex" data-item="Frontal-Cortex">
+          <div class="productImgContainer">
+            <img src="./productImgs/product-4.png" alt="" />
+            <h1 class="cardHeading">MEMORY BOOST</h1>
+            <p class="cardDescription">
+              A module that optimizes the sync between brain and cyberware.
+            </p>
+          </div>
+        </div>
+        <div class="card implants Immune-System" data-item="Immune-System">
+          <div class="productImgContainer">
+            <img src="./productImgs/product-5.png" alt="" />
+            <h1 class="cardHeading">PAIN EDITOR</h1>
+            <p class="cardDescription">
+              An immune system enhacement valued highly on the streets. Reduce
+              the pain.
+            </p>
+          </div>
+        </div>
+        <div class="card implants Immune-System" data-item="Immune-System">
+          <div class="productImgContainer">
+            <img src="./productImgs/product-10.png" alt="" />
+            <h1 class="cardHeading">INDUCTOR</h1>
+          </div>
+          <p class="cardDescription">
+            Invigorates the immune system after receiving an external
+            high-voltage stimulus.
+          </p>
+        </div>
+        <div class="card implants Nervous-System" data-item="Nervous-System">
+          <div class="productImgContainer">
+            <img src="./productImgs/product-6.png" alt="" />
+            <h1 class="cardHeading">REFLEX TUNER</h1>
+            <p class="cardDescription">
+              A coprocesser that supports decision-making processes in emergency
+              situations.
+            </p>
+          </div>
+        </div>
+        <div
+          class="card implants Skeleton-Cyberware"
+          data-item="Skeleton-Cyberware"
+        >
+          <div class="productImgContainer">
+            <img src="./productImgs/product-7.png" alt="" />
+            <h1 class="cardHeading">BIONIC LUNGS</h1>
+            <p class="cardDescription">
+              Efficient lungs engineered with both organic and artificial tissue
+              fibers.
+            </p>
+          </div>
+        </div>
+        <div
+          class="card implants Skeleton-Cyberware"
+          data-item="Skeleton-Cyberware"
+        >
+          <div class="productImgContainer">
+            <img src="./productImgs/product-8.png" alt="" />
+            <h1 class="cardHeading">DENSE MARROW</h1>
+            <p class="cardDescription">
+              Increases body weight and the power behind body movements.
+            </p>
+          </div>
+        </div>
+        <div
+          class="card implants Skeleton-Cyberware"
+          data-item="Skeleton-Cyberware"
+        >
+          <div class="productImgContainer">
+            <img src="./productImgs/product-9.png" alt="" />
+            <h1 class="cardHeading">TITANIUM BONESs</h1>
+            <p class="cardDescription">
+              Metal-infused bones capable of withstanding heavy loads.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
     <script src="./js/app.js"></script>
   </body>
 </html>

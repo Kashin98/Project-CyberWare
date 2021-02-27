@@ -3,20 +3,22 @@
   margin: 0;
   padding: 0;
 }
-<<<<<<< HEAD
 
-=======
 @font-face {
   font-family: Cyberpunk;
   src: url(../font/Cyberpunk.ttf);
+  font-family: BlenderPro;
+  src: url(../font/BlenderPro-Book.ttf);
 }
 
 :root {
   --cyberBlueShadow: 2px 2px 4px aqua;
   --cyberYellowShadow: 2px 2px 4px #d9ff00;
   --cyberYellow: #d9ff00;
+  --cyberPunkFont: Cyberpunk;
+  --blenderProFont: BlenderPro;
 }
->>>>>>> 37207cd (first commit)
+
 /* NavBar Styling */
 #navIcon {
   position: fixed;
@@ -26,11 +28,8 @@
   padding: 10px;
   z-index: 3;
   transition: all 0.5s;
-<<<<<<< HEAD
-=======
   color: var(--cyberYellow);
   text-shadow: 1px 1px 3px aqua;
->>>>>>> 37207cd (first commit)
   animation: blowup 3s infinite;
 }
 
@@ -74,8 +73,6 @@ a {
   text-decoration: none;
 }
 
-<<<<<<< HEAD
-=======
 /* Main Banner and social Links*/
 header {
   display: grid;
@@ -86,7 +83,7 @@ header {
 }
 .banner {
   font-size: 3rem;
-  font-family: Cyberpunk;
+  font-family: var(--cyberPunkFont);
   text-transform: uppercase;
   text-align: center;
   color: var(--cyberYellow);
@@ -112,6 +109,7 @@ header {
   text-shadow: var(--cyberYellowShadow);
   animation: waresChange 4s infinite;
 }
+
 @keyframes waresChange {
   25% {
     color: var(--cyberYellow);
@@ -167,14 +165,20 @@ header {
 
 /* About Section */
 .about {
+  font-family: var(--blenderProFont);
+  background-color: aqua;
+  color: #000000;
 }
+.typeEffect {
+  animation: typing 1s infinite;
+}
+
 .mainHeading {
-  font-size: 2rem;
-  font-family: Cyberpunk;
+  padding: 40px;
+  font-size: 2.5rem;
+  font-family: var(--blenderProFont);
   text-transform: uppercase;
   text-align: center;
-  color: var(--cyberYellow);
-  text-shadow: var(--cyberBlueShadow);
 }
 .imgContainer {
   overflow: hidden;
@@ -185,18 +189,201 @@ header {
 img {
   height: 100%;
   width: 100%;
+  border-radius: 5px;
+}
+.subHeading {
+  text-transform: capitalize;
+  text-align: center;
+  margin: 30px;
+  font-size: 1.8rem;
+  font-family: var(--blenderProFont);
 }
 .description {
   height: 100%;
   display: grid;
-
+  font-size: 1.2rem;
   text-align: left;
   align-content: center;
   padding: 30px;
 }
 
->>>>>>> 37207cd (first commit)
+/* Experiemnt section */
+.experiment {
+  font-family: var(--blenderProFont);
+  color: #ffffff;
+  background-color: #000000;
+}
+.feedback {
+  border: 1px solid var(--cyberYellow);
+  border-radius: 10px;
+  color: var(--cyberYellow);
+  padding: 10px;
+  margin-bottom: 20px;
+  display: none;
+}
+.showItem {
+  display: block;
+}
+.experimentForm {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 10px;
+  justify-items: center;
+  width: 100%;
+}
+.details {
+  display: flex;
+}
+
+.customerImg {
+  width: 50px;
+  height: 50px;
+  border: aqua 3px solid;
+  border-radius: 50%;
+}
+.data {
+  padding-left: 40px;
+}
+.fields {
+  font-family: var(--blenderProFont);
+  font-size: 1rem;
+  color: #ffffff;
+  border: aqua 2px solid;
+  background-color: #000000;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 10px;
+  width: 40vw;
+  flex-shrink: 0;
+}
+.fields::placeholder {
+  font-family: var(--blenderProFont);
+  font-size: 1rem;
+}
+.fields:focus,
+.submitBtn:focus,
+.Btn:focus {
+  outline: none;
+}
+.fields:focus {
+  color: #ffffff;
+  font-family: var(--blenderProFont);
+  font-size: 1rem;
+}
+.submitBtn {
+  margin-top: 10px;
+  font-family: var(--blenderProFont);
+  font-size: 1.3rem;
+  padding: 5px 40px;
+  color: aqua;
+  background: #000000;
+  border: aqua 2px solid;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.submitBtn:hover {
+  background: aqua;
+  color: #000000;
+}
+.experimentList {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.card {
+  border-radius: 10px;
+  border: 2px solid;
+  padding: 15px;
+  margin: 20px;
+  margin-bottom: 40px;
+}
+.experimentTitle {
+  color: aqua;
+}
+.shortHeading {
+  color: var(--cyberYellow);
+  padding-bottom: 30px;
+}
+.buttons {
+  display: flex;
+  justify-content: right;
+}
+
+/* Products */
+.products {
+  background: aqua;
+  color: #000000;
+}
+.productsList {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.filterBtns {
+  text-align: center;
+}
+.Btn {
+  margin-top: 10px;
+  font-family: var(--blenderProFont);
+  font-size: 1.3rem;
+  padding: 5px 40px;
+  color: #000000;
+  background: aqua;
+  border: #000000 2px solid;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.Btn:hover {
+  background: #000000;
+  color: aqua;
+}
+
+.search {
+  margin: 40px;
+  text-align: center;
+}
+.searchBox {
+  margin-top: 10px;
+  font-family: var(--blenderProFont);
+  font-size: 1.3rem;
+  padding: 5px 40px;
+  color: #000000;
+  background: var(--cyberYellow);
+  border: #000000 2px solid;
+  border-radius: 10px;
+  transition: all 0.5s;
+}
+.implants {
+  background-color: #000000;
+}
+.cardHeading {
+  text-transform: uppercase;
+  text-align: center;
+  margin: 10px;
+  font-size: 1.3rem;
+  color: aqua;
+  font-family: var(--blenderProFont);
+}
+.cardDescription {
+  text-align: left;
+  margin-top: 20px;
+  color: #ffffff;
+  font-family: var(--blenderProFont);
+  font-size: 1rem;
+}
+
+/* Media screen Adjusts */
+@media screen and (min-width: 375px) {
+  .productsList {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 @media screen and (min-width: 640px) {
+  .experimentList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 768px) {
   .navBar {
     left: -13rem;
     width: 13rem;
@@ -205,8 +392,6 @@ img {
     transform: translateX(13rem);
     transition: all 0.5s;
   }
-<<<<<<< HEAD
-=======
   .banner {
     font-size: 6rem;
   }
@@ -220,31 +405,26 @@ img {
   .howWeDo {
     direction: rtl;
   }
+  .productsList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
-/* Experiemnt section */
-.mainHeading {
-}
-.experimentForm {
-  display: grid;
-  grid-template-columns: 1fr;
-  padding: 10px;
+@media screen and (min-width: 1024px) {
+  .productsList {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
 }
 
-.fields {
-  display: flex;
-  flex-direction: column;
-}
-.submitBtn {
-}
-.experimentList {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.card {
-  border-radius: 10px;
-  border: 2px solid;
-  padding: 15px;
-  margin: 20px;
->>>>>>> 37207cd (first commit)
+/* Animations */
+/* Typing effect */
+@keyframes typing {
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
