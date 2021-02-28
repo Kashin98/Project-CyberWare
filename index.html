@@ -13,6 +13,20 @@
     />
 
     <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      rel="stylesheet prefetch"
+      as="font"
+      href="/font/blenderpro-book-webfont.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet prefetch"
+      as="font"
+      href="/font/cyberpunk-webfont.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
     <script
       src="https://kit.fontawesome.com/76be54988d.js"
       crossorigin="anonymous"
@@ -24,9 +38,11 @@
       <div id="navIcon"><i class="fas fa-bars"></i></div>
       <article class="navBar">
         <ul class="navList">
-          <li class="navLink"><a href="">Home</a></li>
-          <li class="navLink"><a href="">Home</a></li>
-          <li class="navLink"><a href="">Home</a></li>
+          <a href="#"><li class="navLink">Home</li></a>
+          <a href="#about"><li class="navLink">About</li></a>
+          <a href="#experiment"><li class="navLink">Experiment</li></a>
+          <a href="#implants"><li class="navLink">Implants</li></a>
+          <a href="#contact"><li class="navLink">Location</li></a>
         </ul>
       </article>
     </nav>
@@ -35,9 +51,17 @@
     <header>
       <h1 class="banner">CYBER <span class="wares">Ware</span></h1>
       <article class="socials">
-        <a class="socialLinks" href=""><i class="fab fa-github"></i></a>
-        <a class="socialLinks" href=""><i class="fab fa-linkedin"></i></a>
-        <a class="socialLinks" href=""><i class="fab fa-twitter"></i></a>
+        <a class="socialLinks" href="https://github.com/Kashin98"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          class="socialLinks"
+          href="https://www.linkedin.com/in/karan-kumar-445304155/"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a class="socialLinks" href="https://www.instagram.com/_kashin98/"
+          ><i class="fab fa-instagram"></i
+        ></a>
       </article>
 
       <!-- Video  -->
@@ -51,7 +75,7 @@
     </header>
 
     <!-- About -->
-    <section class="about">
+    <section id="about">
       <h1 class="mainHeading">
         we Build a better you<span class="typeEffect">|</span>
       </h1>
@@ -61,7 +85,7 @@
         </div>
         <div class="description">
           <h1 class="subHeading">Testing</h1>
-          <p class="mainDescription">
+          <p class="aboutDescription">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Perspiciatis, eum facilis? Optio aut quia ipsa modi, ullam iste
             nesciunt, molestias dicta mollitia nemo inventore itaque libero fuga
@@ -77,7 +101,7 @@
         </div>
         <div class="description">
           <h1 class="subHeading">Implementation</h1>
-          <p class="minDeascription">
+          <p class="aboutDescription">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore
             quod mollitia expedita ea officiis beatae quia distinctio soluta hic
             voluptatem reiciendis ut quisquam, molestias officia perspiciatis a
@@ -90,7 +114,7 @@
     </section>
 
     <!-- Experiment -->
-    <section class="experiment">
+    <section id="experiment">
       <h1 class="mainHeading">
         Be Our Experiment<span class="typeEffect">|</span>
       </h1>
@@ -103,28 +127,28 @@
           placeholder="Email"
           type="email"
         />
-        <button type="submit" class="submitBtn" id="submitBtn">
+        <button type="submit" class="submitBtn" id="formSubmitBtn">
           Join The List
         </button>
       </form>
       <h1 class="subHeading" style="text-align: left">
-        We decide, you try
-        <span style="color: aqua; text-transform: uppercase"> - IT'S FREE</span>
+        Enter your details to join
+        <span style="color: aqua"> - IT'S FREE</span>
       </h1>
       <article class="experimentList">
         <!-- Single card -->
         <div class="card">
-          <div class="details">
+          <div style="display: flex">
             <img class="customerImg" src="./customerImgs/cust-0.png" alt="" />
             <div class="data">
-              <h4 class="experimentTitle">
+              <h4>
                 Name: <span class="shortHeading userName">Lorem Ipsum</span>
               </h4>
-              <h4 class="experimentTitle">
+              <h4>
                 Email:
                 <span class="shortHeading userEmail">kashin@arasaki.c</span>
               </h4>
-              <h4 class="experimentTitle">
+              <h4>
                 Experiment:
                 <span class="shortHeading">Immune System</span>
               </h4>
@@ -139,7 +163,7 @@
     <div style="padding-top: 60px; background-color: #000000"></div>
 
     <!-- Implants -->
-    <section class="products">
+    <section id="implants">
       <h1 class="mainHeading">Implants<span class="typeEffect">|</span></h1>
       <article class="filterBtns">
         <button class="Btn" data-filter="All">All</button>
@@ -165,35 +189,31 @@
       </article>
       <article class="productsList">
         <!-- Product Showcase -->
-
-        <div class="card implants Immune-System" data-item="Immune-System">
+        <div class="implants Immune-System" data-item="Immune-System">
           <div class="productImgContainer">
             <img src="./productImgs/product-1.png" alt="" />
             <h1 class="cardHeading">METABOLIC EDITOR</h1>
-            <p class="cardDescription" style="color: azure">
+            <p class="cardDescription">
               An implant designed to assist liver and pancreas function against
               poisons.
             </p>
           </div>
         </div>
-        <div class="card implants Nervous-System" data-item="Nervous-System">
+        <div class="implants Nervous-System" data-item="Nervous-System">
           <div class="productImgContainer">
             <img src="./productImgs/product-2.png" alt="" />
             <h1 class="cardHeading">Neofiber</h1>
           </div>
           <p class="cardDescription">Synthetic muscle fibers.</p>
         </div>
-        <div
-          class="card implants Skeleton-Cyberware"
-          data-item="Skeleton-Cyberware"
-        >
+        <div class="implants Skeleton-Cyberware" data-item="Skeleton-Cyberware">
           <div class="productImgContainer">
             <img src="./productImgs/product-3.png" alt="" />
             <h1 class="cardHeading">BIONIC JOINTS</h1>
             <p class="cardDescription">Mechatronic musculoskeletal support.</p>
           </div>
         </div>
-        <div class="card implants Frontal-Cortex" data-item="Frontal-Cortex">
+        <div class="implants Frontal-Cortex" data-item="Frontal-Cortex">
           <div class="productImgContainer">
             <img src="./productImgs/product-4.png" alt="" />
             <h1 class="cardHeading">MEMORY BOOST</h1>
@@ -202,7 +222,7 @@
             </p>
           </div>
         </div>
-        <div class="card implants Immune-System" data-item="Immune-System">
+        <div class="implants Immune-System" data-item="Immune-System">
           <div class="productImgContainer">
             <img src="./productImgs/product-5.png" alt="" />
             <h1 class="cardHeading">PAIN EDITOR</h1>
@@ -212,9 +232,9 @@
             </p>
           </div>
         </div>
-        <div class="card implants Immune-System" data-item="Immune-System">
+        <div class="implants Immune-System" data-item="Immune-System">
           <div class="productImgContainer">
-            <img src="./productImgs/product-10.png" alt="" />
+            <img src="./productImgs/product-0.png" alt="" />
             <h1 class="cardHeading">INDUCTOR</h1>
           </div>
           <p class="cardDescription">
@@ -222,7 +242,7 @@
             high-voltage stimulus.
           </p>
         </div>
-        <div class="card implants Nervous-System" data-item="Nervous-System">
+        <div class="implants Nervous-System" data-item="Nervous-System">
           <div class="productImgContainer">
             <img src="./productImgs/product-6.png" alt="" />
             <h1 class="cardHeading">REFLEX TUNER</h1>
@@ -232,10 +252,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="card implants Skeleton-Cyberware"
-          data-item="Skeleton-Cyberware"
-        >
+        <div class="implants Skeleton-Cyberware" data-item="Skeleton-Cyberware">
           <div class="productImgContainer">
             <img src="./productImgs/product-7.png" alt="" />
             <h1 class="cardHeading">BIONIC LUNGS</h1>
@@ -245,10 +262,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="card implants Skeleton-Cyberware"
-          data-item="Skeleton-Cyberware"
-        >
+        <div class="implants Skeleton-Cyberware" data-item="Skeleton-Cyberware">
           <div class="productImgContainer">
             <img src="./productImgs/product-8.png" alt="" />
             <h1 class="cardHeading">DENSE MARROW</h1>
@@ -257,10 +271,7 @@
             </p>
           </div>
         </div>
-        <div
-          class="card implants Skeleton-Cyberware"
-          data-item="Skeleton-Cyberware"
-        >
+        <div class="implants Skeleton-Cyberware" data-item="Skeleton-Cyberware">
           <div class="productImgContainer">
             <img src="./productImgs/product-9.png" alt="" />
             <h1 class="cardHeading">TITANIUM BONESs</h1>
@@ -269,6 +280,77 @@
             </p>
           </div>
         </div>
+      </article>
+    </section>
+
+    <!-- Contact Details -->
+    <section id="contact" class="contact">
+      <h1 class="mainHeading">
+        Night City Location<span class="typeEffect">|</span>
+      </h1>
+      <article class="contactDetails">
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d886188.2409216223!2d-95.96174953501654!3d29.815995387800758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX%2C%20USA!5e0!3m2!1sen!2sin!4v1614497058086!5m2!1sen!2sin"
+            width="100%"
+            height="450"
+            style="border: 0; border-radius: 10px"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+        <div class="info">
+          <div class="address">
+            <h1 class="subHeading">Location</h1>
+            <h1 class="subHeading" style="font-size: 1rem">
+              8193, Night City, NUSA
+            </h1>
+          </div>
+          <div class="Time">
+            <h1 class="subHeading">Timings</h1>
+            <h1 class="subHeading" style="font-size: 1rem">
+              Everyday - Midnight to Morning
+            </h1>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- Footer -->
+    <section class="footer">
+      <article class="socials" style="margin-top: 0; padding-top: 30px">
+        <a class="footerLinks" href="https://github.com/Kashin98"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          class="footerLinks"
+          href="https://www.linkedin.com/in/karan-kumar-445304155/"
+          ><i class="fab fa-linkedin"></i
+        ></a>
+        <a class="footerLinks" href="https://www.instagram.com/_kashin98/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </article>
+      <h1 class="subHeading" style="margin: 0; padding: 20px">
+        CyberWare &#169; <span id="date"></span>
+      </h1>
+    </section>
+
+    <!-- Modal -->
+    <section class="modal">
+      <article class="modalContainer">
+        <div style="height: 50vh">
+          <span class="modalClose"><i class="fas fa-window-close"></i></span>
+          <img
+            style="border: 3px aqua solid; border-radius: 10px"
+            class="modalItem"
+            src="../productImgs/product-1.png"
+            alt=""
+          />
+        </div>
+        <h1 class="subHeading" style="color: aqua">
+          This is just to test my modal concept. The imgs are low quality.
+        </h1>
       </article>
     </section>
     <script src="./js/app.js"></script>

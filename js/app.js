@@ -5,9 +5,16 @@ const navBar = document.querySelector(".navBar");
 navIcon.addEventListener("click", () => {
   navBar.classList.toggle("navOpen");
 });
+// Close navbar on clicking link
+const navLink = document.querySelectorAll(".navLink");
+navLink.forEach((item) => {
+  item.addEventListener("click", () => {
+    navBar.classList.remove("navOpen");
+  });
+});
 
 // Types
-type = [
+const type = [
   "CyberPsychosis",
   "Circulatory System",
   "Skeleton Cyberware",
@@ -19,7 +26,7 @@ type = [
 const experimentList = document.querySelector(".experimentList");
 const nameForm = document.getElementById("name");
 const email = document.getElementById("email");
-const submitExperimentForm = document.getElementById("submitBtn");
+const submitExperimentForm = document.getElementById("formSubmitBtn");
 
 // Create New Subjects
 class Subject {
@@ -27,24 +34,26 @@ class Subject {
     this.img = Math.floor(Math.random() * 5);
     this.name = name;
     this.email = email;
-    this.type = type;
+    this.type = Math.floor(Math.random() * 5);
   }
   display() {
     const newExperiment = document.createElement("div");
     newExperiment.classList.add("card");
     newExperiment.innerHTML = `
       <div class="details">
-        <img class="customerImg" src="./customerImgs/cust-${this.img}.png" alt="" />
+        <img class="customerImg" src="./customerImgs/cust-${
+          this.img
+        }.png" alt="" />
         <div class="data">
-          <h4 class="experimentTitle">
+          <h4>
             Name: <span class="shortHeading userName">${this.name}</span>
           </h4>
-          <h4 class="experimentTitle">
+          <h4>
             Email: <span class="shortHeading userEmail">${this.email}</span>
           </h4>
-          <h4 class="experimentTitle">
+          <h4>
             Experiment:
-            <span class="shortHeading ">${this.type}</span>
+            <span class="shortHeading ">${type[this.type]}</span>
           </h4>
         </div>
       </div>
@@ -67,7 +76,6 @@ class Subject {
   }
 }
 
-// functions
 const feedback = () => {
   const feedbackData = document.querySelector(".feedback");
   feedbackData.textContent = "Empty Fields Submitted";
@@ -83,11 +91,7 @@ submitExperimentForm.addEventListener("click", (e) => {
   if (nameForm.value === "" || email.value === "") {
     feedback();
   } else {
-    const newSubject = new Subject(
-      nameForm.value,
-      email.value,
-      type[Math.floor(Math.random() * 5)]
-    );
+    const newSubject = new Subject(nameForm.value, email.value);
     newSubject.display();
     addButtonFunctionality(nameForm.value);
     nameForm.value = "";
@@ -99,8 +103,6 @@ submitExperimentForm.addEventListener("click", (e) => {
 function addButtonFunctionality(textValue) {
   const allCards = document.querySelectorAll(".card");
   allCards.forEach((item) => {
-    console.log(item.querySelector(".userName").textContent);
-    console.log(item.querySelector(".userName").textContent === textValue);
     if (item.querySelector(".userName").textContent === textValue) {
       // Edit Functionality
       item.querySelector(".edit").addEventListener("click", (e) => {
@@ -117,22 +119,6 @@ function addButtonFunctionality(textValue) {
       });
     }
   });
-
-  // experimentList.addEventListener("click", (e) => {
-  //   const value = e.target;
-  //   console.log(value);
-  //   if (value.classList.contains("edit")) {
-  //     // Set Fields
-  //     nameForm.value = document.querySelector(".userName").textContent;
-  //     email.value = document.querySelector(".userEmail").textContent;
-
-  //     // remove
-  //     value.parentElement.parentElement.remove();
-  //   } else if (value.classList.contains("delete")) {
-  //     // remove
-  //     value.parentElement.parentElement.remove();
-  //   }
-  // });
 }
 
 // Btn filter
@@ -140,7 +126,6 @@ const filterBtns = document.querySelectorAll(".Btn");
 filterBtns.forEach((item) => {
   item.addEventListener("click", (e) => {
     const btnValue = e.target.dataset.filter;
-
     // All Items
     const implants = document.querySelectorAll(".implants");
     implants.forEach((item) => {
@@ -157,21 +142,16 @@ filterBtns.forEach((item) => {
   });
 });
 
-// Search Filter
+// Search Box Filter
 const search = document.getElementById("searchBox");
 search.addEventListener("keyup", (e) => {
   const searchValue = e.target.value.trim().toLowerCase();
   const cardTitle = document.querySelectorAll(".cardHeading");
-  console.log(searchValue.length);
-
   cardTitle.forEach((item) => {
     const titleSlice = item.textContent
       .trim()
       .toLowerCase()
       .slice(0, searchValue.length);
-    console.log(titleSlice);
-    console.log(searchValue);
-
     if (searchValue === titleSlice) {
       item.parentElement.parentElement.style.display = "block";
     } else {
@@ -179,3 +159,30 @@ search.addEventListener("keyup", (e) => {
     }
   });
 });
+
+// ModalOpen
+const modal = document.querySelector(".modal");
+const allProductImgs = document.querySelectorAll(".cardHeading");
+allProductImgs.forEach((item) => {
+  item.previousElementSibling.addEventListener("click", (e) => {
+    modal.classList.add("showItem");
+    const targetValue = item.previousElementSibling.src;
+    const imgPath = targetValue.slice(
+      targetValue.length - 5,
+      targetValue.length
+    );
+    const modalImg = document.querySelector(".modalItem");
+    modalImg.src = `../productImgs/product-${imgPath}`;
+  });
+});
+
+// Modal Close
+const modalClose = document.querySelector(".fa-window-close");
+modalClose.addEventListener("click", () => {
+  modal.classList.remove("showItem");
+});
+
+// Footer Date
+const footerDate = document.getElementById("date");
+const date = new Date();
+footerDate.textContent = date.getFullYear();

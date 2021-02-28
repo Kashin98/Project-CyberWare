@@ -2,13 +2,24 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  scroll-behavior: smooth;
 }
 
 @font-face {
-  font-family: Cyberpunk;
-  src: url(../font/Cyberpunk.ttf);
   font-family: BlenderPro;
-  src: url(../font/BlenderPro-Book.ttf);
+  unicode-range: U+000-5FF;
+  src: url("../font/blenderpro-book-webfont.woff2") format("woff2"),
+    url("../font/blenderpro-book-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: Cyberpunk;
+  unicode-range: U+000-5FF;
+  src: url("../font/cyberpunk-webfont.woff2") format("woff2"),
+    url("../font/cyberpunk-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
 }
 
 :root {
@@ -50,21 +61,30 @@
   left: -100vw;
   width: 100vw;
   height: 100%;
-  background-color: rgba(75, 42, 105, 0.295);
+  background-color: #000000c0;
   transition: all 0.5s;
+  z-index: 1;
 }
 .navList {
   display: flex;
   flex-direction: column;
-  margin-top: 40px;
-  padding: 20px;
+  margin-top: 100px;
   list-style: none;
 }
 .navLink {
   text-transform: capitalize;
-  padding: 10px 0;
-  font-size: 1.7rem;
+  padding: 10px 20px;
+  font-size: 2rem;
+  font-family: var(--blenderProFont);
+  color: var(--cyberYellow);
+  transition: all 0.5s;
 }
+.navLink:hover {
+  background-color: var(--cyberYellow);
+  color: #000000;
+  padding-left: 30px;
+}
+
 .navOpen {
   transform: translateX(100vw);
   transition: all 0.5s;
@@ -140,11 +160,11 @@ header {
   color: var(--cyberYellow);
   border-radius: 50%;
   text-align: center;
-  vertical-align: middle;
   line-height: 10px;
   transition: all 0.5s;
 }
-.socialLinks:hover {
+.socialLinks:hover,
+.footerLinks:hover {
   color: aqua;
 }
 
@@ -164,7 +184,7 @@ header {
 }
 
 /* About Section */
-.about {
+#about {
   font-family: var(--blenderProFont);
   background-color: aqua;
   color: #000000;
@@ -191,13 +211,6 @@ img {
   width: 100%;
   border-radius: 5px;
 }
-.subHeading {
-  text-transform: capitalize;
-  text-align: center;
-  margin: 30px;
-  font-size: 1.8rem;
-  font-family: var(--blenderProFont);
-}
 .description {
   height: 100%;
   display: grid;
@@ -206,9 +219,19 @@ img {
   align-content: center;
   padding: 30px;
 }
+.subHeading {
+  text-transform: capitalize;
+  text-align: center;
+  margin: 30px;
+  font-size: 1.8rem;
+  font-family: var(--blenderProFont);
+}
+.aboutDescription {
+  font-size: 1rem;
+}
 
 /* Experiemnt section */
-.experiment {
+#experiment {
   font-family: var(--blenderProFont);
   color: #ffffff;
   background-color: #000000;
@@ -220,9 +243,6 @@ img {
   padding: 10px;
   margin-bottom: 20px;
   display: none;
-}
-.showItem {
-  display: block;
 }
 .experimentForm {
   display: grid;
@@ -243,6 +263,7 @@ img {
 }
 .data {
   padding-left: 40px;
+  color: aqua;
 }
 .fields {
   font-family: var(--blenderProFont);
@@ -253,8 +274,7 @@ img {
   border-radius: 10px;
   padding: 10px;
   margin: 10px;
-  width: 40vw;
-  flex-shrink: 0;
+  width: 70vw;
 }
 .fields::placeholder {
   font-family: var(--blenderProFont);
@@ -289,16 +309,17 @@ img {
   display: grid;
   grid-template-columns: 1fr;
 }
-.card {
+.card,
+.implants {
   border-radius: 10px;
-  border: 2px solid;
+  border: 2px solid #ffffff;
   padding: 15px;
   margin: 20px;
   margin-bottom: 40px;
+  background: #000000;
+  display: block;
 }
-.experimentTitle {
-  color: aqua;
-}
+
 .shortHeading {
   color: var(--cyberYellow);
   padding-bottom: 30px;
@@ -309,7 +330,7 @@ img {
 }
 
 /* Products */
-.products {
+#implants {
   background: aqua;
   color: #000000;
 }
@@ -351,9 +372,6 @@ img {
   border-radius: 10px;
   transition: all 0.5s;
 }
-.implants {
-  background-color: #000000;
-}
 .cardHeading {
   text-transform: uppercase;
   text-align: center;
@@ -369,27 +387,101 @@ img {
   font-family: var(--blenderProFont);
   font-size: 1rem;
 }
+/* Modal */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  background-color: #000000d0;
+  display: none;
+}
+.showItem {
+  display: block;
+}
+.modalContainer {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  padding: 40px;
+}
+.modalClose {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 2rem;
+  color: aqua;
+}
+
+/* Contact details */
+.contact {
+  background: black;
+  color: #d9ff00;
+}
+.contactDetails {
+  display: grid;
+  justify-content: center;
+  padding: 50px;
+}
+.info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+.map {
+  width: 75%;
+  display: flex;
+  justify-self: center;
+}
+/* Footer */
+.footer {
+  background: var(--cyberYellow);
+}
+.footerLinks {
+  display: inline-block;
+  font-size: 1rem;
+  border: 2px solid;
+  padding: 8px;
+  margin: 10px;
+  color: black;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 10px;
+  transition: all 0.5s;
+}
 
 /* Media screen Adjusts */
-@media screen and (min-width: 375px) {
+@media screen and (min-width: 480px) {
   .productsList {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
-@media screen and (min-width: 640px) {
-  .experimentList {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+  @media screen and (min-width: 640px) {
+    .experimentList {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .map {
+    width: 100%;
+    height: 100%;
+  }
+  .fields {
+    width: 50vw;
   }
 }
-
 @media screen and (min-width: 768px) {
   .navBar {
-    left: -13rem;
-    width: 13rem;
+    left: -20rem;
+    width: 20rem;
   }
   .navOpen {
-    transform: translateX(13rem);
+    transform: translateX(20rem);
     transition: all 0.5s;
   }
   .banner {
@@ -404,20 +496,37 @@ img {
   }
   .howWeDo {
     direction: rtl;
+    padding-bottom: 6rem;
   }
   .productsList {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
+  .modalContainer {
+    width: 50%;
+  }
+  .aboutDescription {
+    font-size: 1.2rem;
+  }
 }
-
 @media screen and (min-width: 1024px) {
   .productsList {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
+  .contactDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+  }
+  .info {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+  }
 }
-
 /* Animations */
 /* Typing effect */
 @keyframes typing {
