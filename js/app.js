@@ -149,11 +149,16 @@ search.addEventListener("keyup", (e) => {
   const searchValue = e.target.value.trim().toLowerCase();
   const cardTitle = productList.querySelectorAll(".cardHeading");
   cardTitle.forEach((item) => {
-    const titleSlice = item.textContent
-      .trim()
-      .toLowerCase()
-      .slice(0, searchValue.length);
-    if (searchValue === titleSlice) {
+    // Method 1 - To search but will only check starting of string
+
+    // const titleSlice = item.textContent
+    //   .trim()
+    //   .toLowerCase()
+    //   .slice(0, searchValue.length);
+    // if (searchValue === titleSlice)
+
+    // Method 2 - ES6 easier approach and will check whole string
+    if (item.textContent.toLowerCase().includes(searchValue)) {
       item.parentElement.parentElement.parentElement.style.display = "block";
     } else {
       item.parentElement.parentElement.parentElement.style.display = "none";
