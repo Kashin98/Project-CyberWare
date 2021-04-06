@@ -10,6 +10,8 @@ This is the bucket's direct Endpoint "http://project-cyberware.s3-website.ap-sou
 
 WEBSITE FULLY ACCESSIBLE THROUGH CDN: "http://d24yr5j6bukzc9.cloudfront.net"
 
+It's hosted on netlify as well - "https://proj-cyberware.netlify.app"
+
 Learned how to:
 
 1.) Practicing multiple JS concepts in real time website building.
