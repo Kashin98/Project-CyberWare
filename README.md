@@ -1,6 +1,6 @@
 Creating a fictional CyberWare website from scratch to practice JS concepts and knowledge.
 
-Using similar AWS services to previous project to better understand them
+Using similar AWS services to previous projects to better understand them
 
 Hosted on AWS S3 bucket.
 
